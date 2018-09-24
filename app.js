@@ -17,14 +17,6 @@ const bodyParser = require('body-parser');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-
-
-
-// let reviews = [
-//   { title: "Great Review!" },
-//   { title: "Next Review" }
-// ]
-
 app.get('/', (req, res) => {
     Review.find()
         .then(reviews => {
@@ -42,25 +34,22 @@ app.engine('handlebars', exphbs({
 }));
 app.set('view engine', 'handlebars');
 
-app.get('/', (req, res) => {
-    res.render('reviews-index', {
-        reviews: reviews
-    });
-})
-
 app.get('/reviews/new', (req, res) => {
     res.render('reviews-new', {});
 })
 
-app.post('/reviews', (req, res) => {
-    console.log(req.body);
-    res.render('reviews-new', {});
-})
+app.get('/reviews/:id', (req, res) => {
+    Review.findById(req.params.id).then((review) => {
+        res.render('reviews-show', { review: review })
+    }).catch((err) => {
+        console.log(err.message);
+    })
+});
 
 app.post('/reviews', (req, res) => {
     Review.create(req.body).then((review) => {
         console.log(review);
-        res.redirect('/');
+        res.redirect(`/reviews/${review._id}`);
     }).catch((err) =>{
         console.log(err.message);
     })
