@@ -4,9 +4,7 @@ const app = express()
 var exphbs = require('express-handlebars');
 const reviews = require('./controllers/reviews');
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/rotten-potatoes', {
-    useMongoClient: true
-});
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/rotten-potatoes');
 
 const bodyParser = require('body-parser');
 
