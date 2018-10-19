@@ -1,0 +1,18 @@
+<a href="/">Back to Home</a>
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
+    <h1>{{job.title}}</h1>
+    <h2>{{job.movieTitle}}</h2>
+    <p>{{job.description}}</p>
+    <p><a href="/jobs/{{job._id}}/edit">Edit</a></p>
+    <p><form method="POST" action="/jobs/{{job._id}}?_method=DELETE">
+        <button class="btn btn-primary" type="submit">Delete</button>
+    </form></p>
+
+    <hr>
+
+    <!-- Comment form -->
+    {{> comment-form}}
+
+  </div>
+</div>

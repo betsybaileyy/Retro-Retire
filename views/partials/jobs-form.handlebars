@@ -1,0 +1,36 @@
+<!-- <fieldset>
+  <legend>Edit job</legend>
+  <p>
+    <label for="job-title">Title</label><br>
+    <input id="job-title" type="text" name="title" value="{{job.title}}"/>
+  </p>
+  <p>
+    <label for="movie-title">Movie Title</label><br>
+    <input id="movie-title" type="text" name="movieTitle" value="{{job.movieTitle}}" />
+  </p>
+  <p>
+    <label for="job-description">Description</label><br>
+    <textarea id="job-description" name="description" rows="10" />{{job.description}}</textarea>
+  </p>
+</fieldset> -->
+
+<fieldset>
+  <legend>Edit job</legend>
+  <!-- TITLE -->
+  <div class="form-group">
+    <label for="job-title">Title</label><br>
+    <input class="form-control" id="job-title" type="text" name="title" value="{{job.title}}"/>
+  </div>
+
+  <!-- MOVIE TITLE -->
+  <div class="form-group">
+    <label for="movie-title">Movie Title</label><br>
+    <input class="form-control" id="movie-title" type="text" name="movieTitle" value="{{job.movieTitle}}" />
+  </div>
+
+  <!-- DESCRIPTION -->
+  <div class="form-group">
+    <label for="job-description">Description</label><br>
+    <textarea class="form-control" id="job-description" name="description" rows="10" />{{job.description}}</textarea>
+  </div>
+</fieldset>

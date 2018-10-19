@@ -2,10 +2,10 @@ const chai = require('chai');
 const chaiHttp = require('chai-http');
 const server = require('../server');
 const should = chai.should();
-const Review = require('../models/review');
+const job = require('../models/job');
 
-const sampleReview =     {
-    "title": "Super Sweet Review",
+const samplejob =     {
+    "title": "Super Sweet job",
     "movie-title": "La La Land",
-    "description": "A great review of a lovely movie."
+    "description": "A great job of a lovely movie."
 }

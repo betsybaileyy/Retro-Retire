@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
+    <form method="POST" action="/jobs/{{job._id}}?_method=PUT">
+      {{> jobs-form}}
+      <!-- BUTTON -->
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit">Save job</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- <form method="POST" action="/jobs/{{job._id}}?_method=PUT">
+    <fieldset>
+        <legend>Edit job</legend>
+
+        <p>
+            <label for="job-title">Title</label><br>
+            <input id="job-title" type="text" name="title" value="{{job.title}}"/>
+        </p>
+
+        <p>
+            <label for="movie-title">Movie Title</label><br>
+            <input id="movie-title" type="text" name="title" value="{{job.movieTitle}}"/>
+        </p>
+
+        <p>
+            <label for="job-description">Description</label><br>
+            <textarea id="job-description" name="description" rows="10" />{{job.description}}</textarea>
+        </p>
+    </fieldset>
+
+    <p>
+        <button type="submit">Save job</button>
+    </p>
+</form> -->

@@ -2,9 +2,10 @@ const express = require('express')
 const methodOverride = require('method-override')
 const app = express()
 var exphbs = require('express-handlebars');
-const reviews = require('./controllers/reviews');
+const jobs = require('./controllers/jobs');
 const mongoose = require('mongoose');
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/rotten-potatoes');
+const comments = require('./controllers/comments');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/retro-retire');
 
 const bodyParser = require('body-parser');
 
@@ -17,7 +18,7 @@ app.engine('handlebars', exphbs({
 }));
 app.set('view engine', 'handlebars');
 
-require('./controllers/reviews')(app);
+require('./controllers/jobs')(app);
 
 app.listen(process.env.PORT || 3000, () => {
     console.log('App listening on port 3000!')

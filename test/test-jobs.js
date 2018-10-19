@@ -2,15 +2,15 @@ const chai = require('chai');
 const chaiHttp = require('chai-http');
 //const app = require('../app');
 const should = chai.should();
-//const Review = require('../models/review');
+//const job = require('../models/job');
 
 module.exports = function(app) {
 chai.use(chaiHttp);
 
-describe('Reviews', ()  => {
+describe('jobs', ()  => {
 
   // TEST INDEX
-  it('should index ALL reviews on / GET', (done) => {
+  it('should index ALL jobs on / GET', (done) => {
     chai.request(server)
         .get('/')
         .end((err, res) => {
@@ -19,11 +19,11 @@ describe('Reviews', ()  => {
           done();
         });
   });
-  // test-reviews.js
+  // test-jobs.js
     // TEST NEW
-    it('should display new form on /reviews/new GET', (done) => {
+    it('should display new form on /jobs/new GET', (done) => {
       chai.request(server)
-        .get(`/reviews/new`)
+        .get(`/jobs/new`)
           .end((err, res) => {
             res.should.have.status(200);
             res.should.be.html
@@ -31,11 +31,11 @@ describe('Reviews', ()  => {
           });
     })
     // TEST SHOW
-it('should show a SINGLE review on /reviews/<id> GET', (done) => {
-  var review = new Review(sampleReview);
-  review.save((err, data) => {
+it('should show a SINGLE job on /jobs/<id> GET', (done) => {
+  var job = new job(samplejob);
+  job.save((err, data) => {
     chai.request(server)
-      .get(`/reviews/${data._id}`)
+      .get(`/jobs/${data._id}`)
       .end((err, res) => {
         res.should.have.status(200);
         res.should.be.html
