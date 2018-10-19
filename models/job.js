@@ -1,9 +1,10 @@
 const mongoose = require('mongoose');
+const Comment = require('./comment')
 
-const job = mongoose.model('job', {
+const Job = mongoose.model('Job', {
     title: String,
     description: String,
     jobTitle: String
 });
 
-module.exports = job
+module.exports = Job

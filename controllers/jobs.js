@@ -1,4 +1,5 @@
-const job = require('../models/job')
+const job = require('../models/job');
+const Comment = require('../models/comment');
 
 module.exports = function(app) {
 
@@ -22,7 +23,9 @@ module.exports = function(app) {
 
     app.get('/jobs/:id', (req, res) => {
         job.findById(req.params.id).then((job) => {
-            res.render('jobs-show', { job: job })
+             Comment.find({ jobId: req.params.id }).then(comments => {
+            res.render('jobs-show', { job: job, comments: comments })
+        })
         }).catch((err) => {
             console.log(err.message);
         })

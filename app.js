@@ -2,12 +2,15 @@ const express = require('express')
 const methodOverride = require('method-override')
 const app = express()
 var exphbs = require('express-handlebars');
-const jobs = require('./controllers/jobs');
 const mongoose = require('mongoose');
-const comments = require('./controllers/comments');
+const Job = require('./models/job')
+
+
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/retro-retire');
 
 const bodyParser = require('body-parser');
+const Comment = require('./models/comment')
+
 
 app.use(methodOverride('_method'))
 
@@ -19,6 +22,9 @@ app.engine('handlebars', exphbs({
 app.set('view engine', 'handlebars');
 
 require('./controllers/jobs')(app);
+require('./controllers/comments')(app);
+// require('./models/comment')(app);
+// require('./models/job')(app);
 
 app.listen(process.env.PORT || 3000, () => {
     console.log('App listening on port 3000!')
