@@ -6,6 +6,6 @@ const job = require('../models/job');
 
 const samplejob =     {
     "title": "Super Sweet job",
-    "movie-title": "La La Land",
+    "job-title": "La La Land",
     "description": "A great job of a lovely movie."
 }
