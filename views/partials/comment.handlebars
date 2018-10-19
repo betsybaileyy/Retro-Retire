@@ -3,6 +3,9 @@
     <h4 class="card-title">{{this.title}}</h4>
     <p class="card-text">{{this.content}}</p>
     <!-- Delete link -->
+    <form method="POST" action="/jobs/comments/{{this._id}}?_method=PUT">
+        <button class="btn btn-link" type="submit">Edit</button>
+    </form>
     <p><form method="POST" action="/jobs/comments/{{this._id}}?_method=DELETE">
         <button class="btn btn-link" type="submit">Delete</button>
     </form></p>
