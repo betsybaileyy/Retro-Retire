@@ -23,4 +23,23 @@ module.exports = (app) => {
     console.log(err.message);
   })
 })
+
+app.put('/jobs/comments/:id', function (req, res) {
+console.log("EDIT comment")
+Comment.findByIdAndUpdate(req.params.id).then((comment) => {
+  res.redirect(`/jobs/${comment.jobId}`);
+}).catch((err) => {
+  console.log(err.message);
+})
+})
 }
+//
+// app.put('/jobs/:id', (req, res) => {
+//   job.findByIdAndUpdate(req.params.id, req.body)
+//     .then(job => {
+//       res.redirect(`/jobs/${job._id}`)
+//     })
+//     .catch(err => {
+//       console.log(err.message)
+//     })
+// })
