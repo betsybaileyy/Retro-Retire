@@ -10,9 +10,9 @@ As a platform, Retro Retire is currently able to allow employers to post their l
 Retro Retire was born from the idea that you don't have to completely stop doing the work you love in order to spend time with the people you love. We believe there is a middle ground between full-time working life and retired life and we are here to support you during that transitional time.
 
 <h3>How did you create Retro Retire?</h3>
-Retro Retire is written in HTML and JavaScript. The layout of this website is very simple and straightforward. 
+Retro Retire is written in HTML and JavaScript. The layout of this website is very simple and straightforward.
 
-<h3>Where can I find Retro Retire</h3>
+<h3>Where can I find Retro Retire?</h3>
 
 You can find a link to Retro Retire here:
 https://retro-retire.herokuapp.com/
